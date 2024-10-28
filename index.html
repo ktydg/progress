@@ -4,27 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="styles.css" rel="stylesheet" type="text/css" />
-  <script src="prgoress.js" type="text/javascript" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <script src="index.js" type="text/javascript" defer></script>
+  <script src="progress.js" type="text/javascript" defer></script>
 </head>
 
 <body>
-  <!-- <progress-spinner progress-color="cyan" ring-color="red"></progress-spinner> -->
   <main>
     <div class="window">
       <div class="component">
         <progress-spinner
-          size="100px"
-          ring-width="20px"
-          ring-color="red"
-          progress-color="blue"
-          period="2"
-          state="normal"
-          value="60"
+          size="150px"
+          ring-width="40px"
+          ring-color="#eff3f6"
+          progress-color="#005bff"
+          period="0.8s"
         />
       </div>
       <div class="controls">
-
+        <div class="controls_list">
+          <div class="list_row">
+            <input id="input_value" type="text" value="40" />
+            <label>Value</label>
+          </div>
+          <div class="list_row">
+            <label class="switch">
+              <input id="switch_animate" type="checkbox">
+              <span class="slider"></span>
+            </label>
+            <label>Animate</label>
+          </div>
+          <div class="list_row">
+            <label class="switch">
+              <input id="switch_hidden" type="checkbox">
+              <span class="slider"></span>
+            </label>
+            <label>Hide</label>
+          </div>
+        </div>
       </div>
     </div>
   </main>
