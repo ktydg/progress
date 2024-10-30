@@ -16,7 +16,6 @@ class Progress extends HTMLElement {
       'hidden'];
   }
 
-  
   attributeChangedCallback(_name, oldValue, newValue) {
     if (oldValue !== newValue) {
       this.render();
@@ -37,7 +36,16 @@ class Progress extends HTMLElement {
     const value = +(this.getAttribute('value') || '0');
     const animated = this.hasAttribute('animated');
 
-    const degrees = 3.6 * value;
+    const prepareValue = (value) => {
+      if (isNaN(value) || value < 0) {
+        return 0;
+      } else if (value > 100) {
+        return 3.6 * 100;
+      }
+      return 3.6 * value
+    }
+
+    const degrees = prepareValue(value);
 
     const makeAnimation = () => {
       let result = ``;
